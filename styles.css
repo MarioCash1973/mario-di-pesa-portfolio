@@ -49,3 +49,16 @@ html,body{max-width:100%;overflow-x:clip}
 .case-hero-bioshock .case-deck,.case-hero-weird-west .case-deck{max-width:690px;}
 @media(max-width:900px){.case-hero-bioshock::before,.case-hero-weird-west::before{width:100%;opacity:.55;background-position:65% center;}.case-hero-bioshock::after,.case-hero-weird-west::after{background:linear-gradient(90deg,#11171bf5 0%,#11171bdf 48%,#11171b78 100%);}}
 @media(max-width:620px){.case-hero-bioshock,.case-hero-weird-west{min-height:unset;}.case-hero-bioshock::before,.case-hero-weird-west::before{opacity:.3;background-position:70% center;}.case-hero-bioshock::after,.case-hero-weird-west::after{background:linear-gradient(90deg,#11171bf2,#11171bd1);}}
+
+
+/* Cinematic project cards: original illustration / local assets */
+.projects .project{background:#172027;isolation:isolate;overflow:hidden;transition:transform .32s ease,border-color .32s ease,box-shadow .32s ease}
+.projects .project::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--card-image);background-position:center;background-size:cover;background-repeat:no-repeat;filter:saturate(.82) brightness(.86);transform:scale(1);transition:transform .75s cubic-bezier(.2,.7,.2,1),filter .55s ease}
+.projects .project::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(to top,rgba(7,10,13,.97) 0%,rgba(9,13,18,.85) 18%,rgba(9,13,18,.35) 51%,rgba(8,12,17,.10) 100%)}
+.projects .project:hover::before{transform:scale(1.065);filter:saturate(.95) brightness(1)}
+.projects .project:hover{box-shadow:0 16px 40px #0005}
+.projects .project .num{color:#f5eee0;z-index:1;text-shadow:0 1px 8px #0008}
+.projects .project>div{position:relative;z-index:1}
+.projects .project h3{text-shadow:0 2px 14px #0008}
+.projects .project p{color:#e2dcd3}
+@media(prefers-reduced-motion:reduce){.projects .project,.projects .project::before{transition:none}.projects .project:hover::before{transform:none}}
