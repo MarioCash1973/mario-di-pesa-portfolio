@@ -15,3 +15,37 @@
 .case-photo.wide-photo{margin-top:36px}
 .promo-photo img{object-fit:contain;background:#101215}
 @media(max-width:620px){.case-gallery-two{grid-template-columns:1fr;gap:18px}}
+
+/* Responsive case-study thumbnails and full-screen gallery */
+html,body{max-width:100%;overflow-x:clip}
+.case-section,.case-content,.case-gallery-two,.case-photo{min-width:0;max-width:100%}
+.case-content{width:100%}
+.case-gallery-two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.case-photo img{width:100%;max-width:100%;height:auto;max-height:290px;aspect-ratio:16/9;object-fit:contain}
+.case-photo.wide-photo{max-width:760px}
+.case-photo.wide-photo img{max-height:380px}
+.case-photo img[data-gallery-image]{cursor:zoom-in;transition:filter .2s ease}
+.case-photo img[data-gallery-image]:hover{filter:brightness(1.12)}
+.case-photo img[data-gallery-image]:focus-visible{outline:3px solid #d6a677;outline-offset:-3px}
+.gallery-lightbox[hidden]{display:none}
+.gallery-lightbox{position:fixed;inset:0;z-index:10000;background:rgba(5,8,12,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:56px 64px 38px;color:#fff}
+.gallery-lightbox img{display:block;max-width:100%;max-height:calc(100dvh - 170px);width:auto;height:auto;object-fit:contain}
+.gallery-lightbox .gallery-caption{font-size:13px;line-height:1.5;text-align:center;color:#dedede;margin:18px auto 0;max-width:780px}
+.gallery-lightbox button{position:absolute;display:grid;place-items:center;border:1px solid #ffffff55;background:#141b22cc;color:white;cursor:pointer;border-radius:50%;width:45px;height:45px;font-size:26px;line-height:1}
+.gallery-lightbox button:hover,.gallery-lightbox button:focus-visible{background:#9a704b}
+.gallery-close{top:16px;right:20px}.gallery-prev{left:12px;top:50%;transform:translateY(-50%)}.gallery-next{right:12px;top:50%;transform:translateY(-50%)}
+.gallery-count{font-size:11px;color:#bdbdbd;letter-spacing:.1em;margin-top:8px}
+@media(max-width:620px){.case-gallery-two{grid-template-columns:1fr}.case-photo img{max-height:240px}.case-photo.wide-photo img{max-height:260px}.gallery-lightbox{padding:60px 45px 28px}.gallery-lightbox img{max-height:calc(100dvh - 160px)}.gallery-lightbox button{width:36px;height:36px;font-size:22px}.gallery-prev{left:3px}.gallery-next{right:3px}}
+
+/* Cinematic case-study art: text stays editable HTML; artwork stays decorative. */
+.case-hero-bioshock,.case-hero-weird-west{background:#11171b;min-height:680px;}
+.case-hero-bioshock::before,.case-hero-weird-west::before{content:"";position:absolute;z-index:0;inset:0 0 0 auto;width:min(66%,1100px);background-position:right center;background-size:cover;background-repeat:no-repeat;pointer-events:none;}
+.case-hero-bioshock::before{background-image:url("assets/bioshock-hero.webp");}
+.case-hero-weird-west::before{background-image:url("assets/weird-west-hero.webp");}
+.case-hero-bioshock::after,.case-hero-weird-west::after{content:"";position:absolute;z-index:0;inset:0;background:linear-gradient(90deg,#11171b 0%,#11171b 30%,#11171bdb 47%,transparent 76%);pointer-events:none;}
+.case-hero-bioshock .case-ambient,.case-hero-weird-west .case-ambient{display:none;}
+.case-hero-bioshock .container,.case-hero-weird-west .container{z-index:1;}
+.case-hero-bioshock h1,.case-hero-weird-west h1{max-width:850px;}
+.case-hero-bioshock .case-deck,.case-hero-weird-west .case-deck{max-width:690px;}
+@media(max-width:900px){.case-hero-bioshock::before,.case-hero-weird-west::before{width:100%;opacity:.55;background-position:65% center;}.case-hero-bioshock::after,.case-hero-weird-west::after{background:linear-gradient(90deg,#11171bf5 0%,#11171bdf 48%,#11171b78 100%);}}
+@media(max-width:620px){.case-hero-bioshock,.case-hero-weird-west{min-height:unset;}.case-hero-bioshock::before,.case-hero-weird-west::before{opacity:.3;background-position:70% center;}.case-hero-bioshock::after,.case-hero-weird-west::after{background:linear-gradient(90deg,#11171bf2,#11171bd1);}}
