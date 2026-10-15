@@ -62,3 +62,14 @@ html,body{max-width:100%;overflow-x:clip}
 .projects .project h3{text-shadow:0 2px 14px #0008}
 .projects .project p{color:#e2dcd3}
 @media(prefers-reduced-motion:reduce){.projects .project,.projects .project::before{transition:none}.projects .project:hover::before{transform:none}}
+
+/* Tomb Raider cinematic showcase */
+.tr-hero{background-image:linear-gradient(90deg,#101215 0%,#101215e8 45%,#10121578 100%),url("assets/Med_Ruin_4.jpg");background-size:cover;background-position:center 44%}
+.tr-hero .case-ambient{display:none}
+.tr-video-list{display:grid;gap:38px;margin-top:32px}
+.tr-video{margin:0;border:1px solid #ffffff30;background:#171a1d;overflow:hidden}
+.tr-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#090b0d}
+.tr-video figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 20px;font-size:12px;letter-spacing:.05em;color:#b7b8b8}
+.tr-video figcaption strong{color:#f0ebe2;font-size:13px}
+.tr-rights-note{font-size:12px!important;color:#999!important;margin-top:28px}
+@media(max-width:650px){.tr-hero{background-position:65% center}.tr-video figcaption{display:block}.tr-video figcaption span{display:block;margin-top:6px}}
